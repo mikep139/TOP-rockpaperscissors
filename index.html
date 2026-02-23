@@ -59,6 +59,11 @@
             console.log(`Total Score = Human: ${humanScore} Computer: ${computerScore}`);
             playRound();
             console.log(`Total Score = Human: ${humanScore} Computer: ${computerScore}`);
+            if (humanScore > computerScore) {
+                console.log("You win!");
+            } else {
+                console.log("Sorry, better luck next time.");
+            }
         }
 
         playGame();
