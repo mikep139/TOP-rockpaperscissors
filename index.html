@@ -11,14 +11,18 @@
         function getComputerChoice() {
             const computerChoice = Math.floor(Math.random() * 3) + 1;
             if (computerChoice === 1) {
-                
+                const computerResult = "rock";
+                return computerResult;
             } else if (computerChoice === 2) {
-
+                const computerResult = "paper";
+                return computerResult;
             } else {
-                
+                const computerResult = "scissors";
+                return computerResult;
             }
-            return computerChoice;
         }
+        console.log(getComputerChoice());
+        
     </script>
 </body>
 </html>
