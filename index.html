@@ -8,6 +8,11 @@
 <body>
     
     <script>
+        let humanScore = 0;
+        let computerScore = 0;
+        let humanChoice;
+        let computerChoice;
+        
         function getComputerChoice() {
             const computerChoice = Math.floor(Math.random() * 3) + 1;
             if (computerChoice === 1) {
@@ -21,8 +26,42 @@
                 return computerResult;
             }
         }
-        console.log(getComputerChoice());
         
+        function getHumanChoice() {
+            let humanChoice = prompt("Choose rock paper or scissors.");
+            return humanChoice;
+        }
+
+        function playRound() {
+            let humanChoice = getHumanChoice();
+            let computerChoice = getComputerChoice();
+            if (
+                (humanChoice === "rock" && computerChoice === "scissors")
+                || 
+                (humanChoice === "paper" && computerChoice === "rock")
+                ||
+                (humanChoice === "scissors" && computerChoice === "paper")
+            ) {
+                humanScore += 1;
+            } else {
+                computerScore += 1;
+            }
+        }
+
+        function playGame() {
+            playRound();
+            console.log(`Total Score = Human: ${humanScore} Computer: ${computerScore}`);
+            playRound();
+            console.log(`Total Score = Human: ${humanScore} Computer: ${computerScore}`);
+            playRound();
+            console.log(`Total Score = Human: ${humanScore} Computer: ${computerScore}`);
+            playRound();
+            console.log(`Total Score = Human: ${humanScore} Computer: ${computerScore}`);
+            playRound();
+            console.log(`Total Score = Human: ${humanScore} Computer: ${computerScore}`);
+        }
+
+        playGame();
     </script>
 </body>
 </html>
