@@ -16,20 +16,17 @@
         function getComputerChoice() {
             const computerChoice = Math.floor(Math.random() * 3) + 1;
             if (computerChoice === 1) {
-                const computerResult = "rock";
-                return computerResult;
+                return "rock";
             } else if (computerChoice === 2) {
-                const computerResult = "paper";
-                return computerResult;
+                return "paper";
             } else {
-                const computerResult = "scissors";
-                return computerResult;
+                return "scissors";
             }
         }
         
         function getHumanChoice() {
             let humanChoice = prompt("Choose rock paper or scissors.");
-            return humanChoice;
+            return humanChoice.toLowerCase();
         }
 
         function playRound() {
@@ -43,6 +40,10 @@
                 (humanChoice === "scissors" && computerChoice === "paper")
             ) {
                 humanScore += 1;
+            } else if (humanChoice === computerChoice) {
+                humanScore += 0;
+                computerScore += 0;
+                console.log("Foul! You picked the same one!");
             } else {
                 computerScore += 1;
             }
